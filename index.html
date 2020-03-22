@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    
+</head>
+<body>
+    <h1 id="title">Tabela Comparativa RMA <sup>v3</sup> </h1>
+    
+    <!--Form-->
+    <div id="main-form" class="div-defaut">
+        <div id="comparative-form">
+            <div class="div-defaut labels"><label for="rma">Escolha o RMA</label></div>
+            <div class="div-defaut inputs">
+                <select name="rma" id="rma">
+                    <option value="RMA 460">RMA 460</option>
+                    <option value="RMA 510" selected>RMA 510</option>
+                    <option value="RMA 460V">RMA 460V</option>
+                    <option value="RMA 510V">RMA 510V</option>
+                </select>
+            </div>
+            <div class="div-defaut labels"><label for="concorrente">Escolha o Concorrente</label></div>
+            <div class="div-defaut inputs">
+                <select name="concorrente" id="concurrent">
+                    <option value="Branco B4T6000SL" selected="selected">Branco B4T6000SL</option>
+                </select>
+            </div>
+            <div class="div-defaut labels"><label id="litro-gasolina" for="valor-gasolina">Valor do litro da Gasolina
+                    R$</label></div>
+            <div class="div-defaut inputs"><input id="valor-litro-gasolina" name="valor-gasolina" type="number" min="0.00"
+                    max="10.00" value="4.75" step="any" required></div>
+    
+            <div class="div-defaut labels"><label id="oleo-4t" for="oleo-4tempos">Valor do litro do Óleo 4t</label></div>
+            <div class="div-defaut inputs"><input id="valor-oleo-4t" name="oleo-4tempos" type="number" step="any" 
+                min="1,00" max="150,00" value="30.00" required></div>
+            <div class="div-defaut labels"><label id="horas-mensais" for="horas-de-trabalho">Horas de Trabalho
+                    Mensal</label></div>
+            <div class="div-defaut inputs"><input id="horas-trabalho" name="horas-de-trabalho" type="number" step="any"
+                    value="100" min="1" max="400" required></div>
+            <div class="div-defaut labels"><label for="tipo-de-bateria">Qual o tipo de bateria?</label></div>
+            <div class="div-defaut inputs" id="batteries-kind">
+                <label>
+                    <input class="radioCheckFix" name="tipo-de-bateria" type="radio" checked value="AP 300" required>AP 300
+                </label><br>
+                <label>
+                    <input class="radioCheckFix" name="tipo-de-bateria" type="radio" value="AP 300S">AP 300S
+                </label><br>
+                <label>
+                    <input class="radioCheckFix" name="tipo-de-bateria" type="radio" value="AP 200">AP 200
+                </label><br>
+            </div>
+            <div class="div-defaut labels"><label for="tipo-de-bateria">Qual carregador?</label></div>
+            <div class="div-defaut inputs" id="chargers-kind">
+                <label>
+                    <input class="radioCheckFix" name="tipo-do-carregador" type="radio" value="AL 101" required>AL 101
+                </label><br>
+                <label>
+                    <input class="radioCheckFix" name="tipo-do-carregador" type="radio" checked value="AL 300">AL 300
+                </label><br>
+                </div>
+            <div class="div-defaut labels"><label for="quantidade-de-baterias">Quantidade de Baterias?</label></div>
+            <div class="div-defaut inputs">
+                <select name="quantidade-de-baterias" id="baterias-quantidade">
+                    <option value="1">1</option>
+                    <option value="2" selected="selected">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <!--Comparative Table-->
+    <h1 id="title">Comparativo Técnico</h1>
+    <div class="div-defaut comparative-table">
+        <table id="comparative-table" class="rwd-table">
+            <tr>
+                <th>Modelo</th>
+                <th id="rma-name">RMA 510</th>
+                <th id="concurrent-name">B4T-6000 SL</th>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Fabricante</td>
+                <td data-th="RMA 510">STIHL</td>
+                <td data-th="B4T-6000 SL">Branco/Briggs</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Tração</td>
+                <td data-th="RMA 510">Não</td>
+                <td data-th="B4T-6000 SL">Não</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Diametro Corte (cm)</td>
+                <td data-th="RMA 510">51</td>
+                <td data-th="B4T-6000 SL">55</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Altura corte (mm)</td>
+                <td data-th="RMA 510">35-90</td>
+                <td data-th="B4T-6000 SL">15-75</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Posições de corte</td>
+                <td data-th="RMA 510">7</td>
+                <td data-th="B4T-6000 SL">5</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Regulagem altura</td>
+                <td data-th="RMA 510">Central</td>
+                <td data-th="B4T-6000 SL">Individual</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Tanque (l)</td>
+                <td data-th="RMA 510">-</td>
+                <td data-th="B4T-6000 SL">2</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Caixa coletora (l)</td>
+                <td data-th="RMA 510">75</td>
+                <td data-th="B4T-6000 SL">Não</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Descarte lateral</td>
+                <td data-th="RMA 510">Sim</td>
+                <td data-th="B4T-6000 SL">Sim</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Trituração</td>
+                <td data-th="RMA 510">Sim</td>
+                <td data-th="B4T-6000 SL">Não</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Rendimento (m<sup>2</sup>/h)</td>
+                <td data-th="RMA 510">1000</td>
+                <td data-th="B4T-6000 SL">900</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Inclinação máxima</td>
+                <td data-th="RMA 510">Sem restrição</td>
+                <td data-th="B4T-6000 SL">15º</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Consumo em 1h</td>
+                <td data-th="RMA 510">2,4 cargas (AP 300)</td>
+                <td data-th="B4T-6000 SL">1,5 litros</td>
+            </tr>
+            <tr>
+                <td data-th="Modelo">Motor</td>
+                <td data-th="RMA 510">Globe EC-Motor</td>
+                <td data-th="B4T-6000 SL">Branco</td>
+            </tr>
+        </table>
+    </div>
+    
+    <!--Vantagens de um RMA vs Concorrente-->
+    <h1 id="title-advantages">Vantagens do RMA 510 vs Cortador B4T6000SL</h1>
+    <div class="div-defaut">
+        <div class="div-defaut text-vantagens">
+            <ul id="advantages">
+                <li>8 posições de regulagem (60% a mais): mais fácil ajustar a altura a necessidade de corte;</li>
+                <li>Ajuste em uma única alavanca: mais fácil e prático, com o passar do tempo fica difícil ajustar a altura
+                    individual nas rodas, o que faz que o usuário não faça;</li>
+                <li>Cesto recolhedor: evita a necessidade de rastelar o gramado;</li>
+                <li>Três posições de altura com fácil regulagem, para usuário de diferentes alturas;</li>
+                <li>Sem restrição de inclinação de terrono;</li>
+                <li>Não necessita manuseio nem armazenamento de combustível e óleos;</li>
+                <li>Menos manutenções</li>
+                <li>Mais silencioso.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!--Análise de Custos-->
+    <h1 id="title">Análise de Custos</h1>
+    <div class="div-defaut">
+        <div class="div-defaut custos">
+            <div id="rma-cost-analysis" class="custo-analise">
+                <div class="level">RMA 510</div>
+                <ul>
+                    <li class="li-description">Cortador + AL 300 + 2 AP 300</li>
+                    <li class="li-cost">R$ 5.155,00</li>
+                    <li class="li-description">Custo por uma carga</li>
+                    <li class="li-cost">R$ 0,15</li>
+                    <li class="li-description">Custo de energia por hora de trabalho</li>
+                    <li class="li-cost">R$ 0,36</li>
+                    <li class="li-description">Custo anual de energia</li>
+                    <li class="li-cost">R$ 437,18</li>
+                </ul>
+            </div>
+            <div id="concurrent-cost-analysis" class="custo-analise">
+                <div class="level">B4T6000SL</div>
+                <ul>
+                    <li class="li-description">Cortador</li>
+                    <li class="li-cost">R$ 1.403,82</li>
+                    <li class="li-description">Custo por reabastecimento</li>
+                    <li class="li-cost">R$ 9,78</li>
+                    <li class="li-description">Custo de abastecimento por hora de trabalho</li>
+                    <li class="li-cost">R$ 7,34</li>
+                    <li class="li-description">Custo anual de manutenção</li>
+                    <li class="li-cost">R$ 665,10</li>
+                </ul>
+            </div>
+        </div>
+        <button id="execute-chart" onClick="runChart()">Gráfico de Custo</button>
+    </div>
+    
+    <!-- Modal for the Chart -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content" id="chart-cost-modal"></div>
+        <!--img class="modal-content" id="img01"-->
+        <div id="caption">
+            Ecomonize em 12 meses <u>R$ 4.524,82</u><br>
+            Tenha retorno do investimento em <u>6 meses</u>
+        </div>
+    </div>
+    
+    <!--Open Chart -->
+    <!--li onClick="runChart()"><img id="myImg08" alt="Martelete"  src="https://user-images.githubusercontent.com/25882098/75161535-ba8f7d00-56fa-11ea-93f4-aeabc2939feb.jpeg" hidden>Betoneira</li-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="/js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", read);
+    </script>
+
+    </body>
+</html>

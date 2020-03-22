@@ -1,0 +1,20 @@
+// Lato Regular
+.lato_regular_base {
+    font-family: 'Montserrat-Regular';
+    color: #000;
+}
+
+.regular_10 {
+    @extend .lato_regular_base;
+    font-size: 10px;
+}
+
+.regular_11 {
+    @extend .lato_regular_base;
+    font-size: 11px;
+}
+
+.regular_12 {
+    @extend .lato_regular_base;
+    font-size: 12px;
+}

@@ -1,0 +1,375 @@
+// commons imports
+@use "colors";
+@use "fonts";
+@use "responsive_mixins";
+@use "typography";
+
+// external imports
+
+body {
+  min-width: 320px;
+  background-color: colors.$dark_bg();
+  font-family: fonts.$main_font();
+  color: colors.$primary_white();
+}
+
+h1 {
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1em;
+  font-style: italic;
+  
+}
+
+p {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.div-defaut {
+  background-color: #213E4A;
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  border-radius: 5px;
+}
+
+#comparative-form {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  grid-column-gap: 2%;
+  
+}
+
+.labels {
+  max-width: 80%;
+  justify-items: end;
+  text-align: right;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+
+.inputs {
+  max-width: 100%;
+  text-align: left;
+  margin: 0;
+}
+
+input {
+  width: 80%;
+  padding: 5px;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.radioCheckFix {
+  width: auto;
+}
+
+select {
+  max-width: 87%;
+  padding: 5px 5px 5px 3px;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+button {
+  display: block;
+  margin: auto;
+  margin-top: 1.5em;
+  grid-column: 1 / 3;
+  background-color: #213E4A;
+  border: 2px solid #355664;
+  color: rgb(200, 230, 230);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: rgba(200, 230, 230, 0.1);
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 520px) {
+  #comparative-form {
+    display: block;
+    grid-template-columns: 1fr;
+    max-width: 80%;
+    margin: auto;
+  }
+  
+  .labels {
+    text-align: left;
+    margin: 0;
+  }
+  
+  .inputs {
+    padding-top: 0;
+  }
+  
+}
+
+//Comparative Table
+
+.comparative-table {
+  margin-top: 1.5em;
+}
+
+$breakpoint-alpha: 515px; // adjust to your needs
+
+.rwd-table {
+  margin: auto;
+  min-width: 50px;// adjust to your needs
+  max-width: 95%;
+  
+  tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+  }
+  
+  td {
+    display: block; 
+    //vertical-align: middle;
+    &:first-child {
+      padding-top: .5em;
+    }
+    &:last-child {
+      padding-bottom: .5em;
+    }
+
+    &:before {
+      content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+      font-weight: bold;
+
+      // optional stuff to make it look nicer
+      width: 6.5em; // magic number :( adjust according to your own content
+      display: inline-block;
+      // end options
+      
+      @media (min-width: $breakpoint-alpha) {
+        display: none;
+      }
+    }
+  }
+  
+  th, td {
+    text-align: left;
+    
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+      padding: .25em .5em;
+      
+      &:first-child {
+        padding-left: 0;
+      }
+      
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.rwd-table {
+  background: #34495E;
+  color: #fff;
+  border-radius: .4em;
+  overflow: hidden;
+  tr {
+    border-color: lighten(#34495E, 10%);
+  }
+  th, td {
+    margin: .5em 1em;
+    @media (min-width: $breakpoint-alpha) { 
+      padding: 1em !important; 
+    }
+  }
+  th, td:before {
+    color: #dd5;
+  }
+}
+
+//Vantagens de um RMA vs Concorrentes
+
+.text-vantagens {
+  margin: auto;
+  max-width: 80%;
+  background: #34495E;
+  text-align: left;
+  padding: 15px 5px 5px 10px;
+  font-style: italic;
+}
+
+.text-vantagens li {
+  line-height: 1.5em;
+  margin-top: 0.7em;
+}
+
+//Análise de Custo
+
+.custos {
+  background: #34495E;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+}
+
+.custo-analise {
+  margin: 10px;
+  border: solid 1px #000;
+  border-radius: 3px;
+  padding: 0;
+  background-color: #355664;
+  margin: auto;
+  margin: 0 auto 1em auto;
+  width: 90%;
+}
+
+.custo-analise > .level {
+  max-width: 100%;
+  background-color: #213e4a;;
+  color: #c8e6e6;
+  padding: 15px 5px;
+  text-align: center;
+  border-radius: 0px;
+}
+
+.custo-analise > ul {
+  margin: 0;
+  padding: 0;
+}
+
+.custo-analise .li-description {
+  min-height: 2em;
+  line-height: 2em;
+  padding: 0 10px;
+  overflow: auto;
+  text-align: left;
+}
+
+.custo-analise .li-cost {
+  padding: 0 10px;
+  overflow: auto;
+  text-align: right;
+  background-color: #3b787a;
+}
+
+#chart-cost {
+  width: 95%;
+  margin: 15px auto 15px auto;
+  box-shadow: rgba(0,0,0,.25) 0 3px 11px 0;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  padding-top: 70px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.95);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 70%;
+  height: 30vh;
+  //height: 500px;
+  //max-width: 700px;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  background-color: var(--button-call-color);
+  color: #0055b0;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 15% 50%;
+  box-shadow: rgba(0,0,0,.25) 0 3px 11px 0;
+}
+
+#myBtn:hover {
+  background-color: var(--button-call-hover-effect);
+}
+
+@media screen and (max-width: 514px) {
+  .custos {
+    grid-template-columns: auto;  
+  }
+  
+} 
