@@ -1,6 +1,8 @@
 google.charts.load('current', { 'packages': ['corechart'] });
 //google.setOnLoadCallback(drawChart);
 
+document.addEventListener("DOMContentLoaded", read);
+
 function read() {
     var rmaChosed = $("#rma").children("option:selected").val();
     var concurrentNames = createConcurrentChoices(rmaChosed);
@@ -162,7 +164,7 @@ function drawLineAnimation(array) {
 
 $(window).resize(function () {
     arrayDataIndex = 0;
-    drawChart(rawDataArray);
+    drawChart();
 });
 
 //Get the modal
